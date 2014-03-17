@@ -9,12 +9,12 @@ namespace Shale\Response\Factories
       return $this->send($message, 200);
     }
 
-    public function resourceNotFound($message)
+    public function notFound($message)
     {
       return $this->send($message, 404);
     }
 
-    public function error($message)
+    public function internalServerError($message)
     {
       return $this->send("An unexpected error occurred: ". $message, 500);
     }
