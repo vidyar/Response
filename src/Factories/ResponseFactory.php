@@ -16,7 +16,7 @@ namespace Shale\Response\Factories
 
     public function error($message)
     {
-      $this->send("An unexpected error occurred: ". $message, 500);
+      return $this->send("An unexpected error occurred: ". $message, 500);
     }
   }
 }
