@@ -1,0 +1,24 @@
+{
+    "name": "shale/response",
+    "description": "Silex Base Response Handlers",
+    "require": {
+        "silex/silex": "~1.1.0"
+    },
+    "license": "Proprietary",
+    "authors": [
+        {
+            "name": "Daniel Sims",
+            "email": "danielsims@gmail.com"
+        },
+        {
+            "name": "John Pedrie",
+            "email": "john@pedrie.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Shale\\Response\\": "src"
+        }
+    }
+}
