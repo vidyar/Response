@@ -8,6 +8,9 @@ namespace Shale\Response\Factories
   {
     private $templateEngine;
 
+    /**
+     * @codeCoverageIgnore
+     */
     public function __construct(Twig_Environment $templateEngine)
     {
       $this->templateEngine = $templateEngine;
@@ -29,7 +32,7 @@ namespace Shale\Response\Factories
 
     public function error($message)
     {
-      $this->send("An unexpected error occurred: ". $message, 500);
+      return $this->send("An unexpected error occurred: ". $message, 500);
     }
   }
 }
