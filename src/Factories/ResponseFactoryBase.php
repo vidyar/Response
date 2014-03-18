@@ -185,7 +185,7 @@ namespace Shale\Response\Factories
 
     protected function send($message, $status, array $headers = array())
     {
-      return new Response($message, $status);
+      return new Response($message, $status, $headers);
     }
   }
 }
