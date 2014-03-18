@@ -2,37 +2,36 @@
 
 namespace Shale\Response\Factories
 {
-  use Shale\Response\Contracts\ResponseInterface;
   use Symfony\Component\HttpFoundation\Response;
 
-  abstract class ResponseFactoryBase implements ResponseInterface
+  abstract class ResponseFactoryBase
   {
     /**
     * Status code 200
     * SHOULD have a entity
-    */    
-    public function ok()
-    { 
+    */
+    public function ok($content, $headers = array())
+    {
         $this->methodNotImplemented();
-    } 
+    }
 
-    /** 
+    /**
     * Status code 201
     * SHOULD have an entity
     * origin server MUST create the resource
-    * SHOULD have Header field Location of the created resource 
+    * SHOULD have Header field Location of the created resource
     */
-    public function created()
-    { 
+    public function created($content, $headers = array())
+    {
         $this->methodNotImplemented();
-    } 
+    }
 
-    /** 
+    /**
     * Status code 202
     * SHOULD include indication of the request's current state
-    */    
-    public function accepted()
-    { 
+    */
+    public function accepted($content, $headers = array())
+    {
         $this->methodNotImplemented();
     }
 
@@ -40,7 +39,7 @@ namespace Shale\Response\Factories
     * Status code 204
     * MUST NOT have a message body
     */
-    public function noContent()
+    public function noContent($content, $headers = array())
     {
         $this->methodNotImplemented();
     }
@@ -48,7 +47,7 @@ namespace Shale\Response\Factories
     /**
     * Status code 301
     */
-    public function movedPermantently()
+    public function movedPermantently($content, $headers = array())
     {
         $this->methodNotImplemented();
     }
@@ -56,7 +55,7 @@ namespace Shale\Response\Factories
     /**
     * Status code 302
     */
-    public function found()
+    public function found($content, $headers = array())
     {
         $this->methodNotImplemented();
     }
@@ -64,7 +63,7 @@ namespace Shale\Response\Factories
     /**
     * Status code 303
     */
-    public function seeOther()
+    public function seeOther($content, $headers = array())
     {
         $this->methodNotImplemented();
     }
@@ -72,7 +71,7 @@ namespace Shale\Response\Factories
     /**
     * Status code 400
     */
-    public function badRequest()
+    public function badRequest($content, $headers = array())
     {
         $this->methodNotImplemented();
     }
@@ -80,7 +79,7 @@ namespace Shale\Response\Factories
     /**
     * Status code 401
     */
-    public function unauthorized()
+    public function unauthorized($content, $headers = array())
     {
         $this->methodNotImplemented();
     }
@@ -88,7 +87,7 @@ namespace Shale\Response\Factories
     /**
     * Status code 403
     */
-    public function forbidden()
+    public function forbidden($content, $headers = array())
     {
         $this->methodNotImplemented();
     }
@@ -96,7 +95,7 @@ namespace Shale\Response\Factories
     /**
     * Status code 404
     */
-    public function notFound()
+    public function notFound($content, $headers = array())
     {
         $this->methodNotImplemented();
     }
@@ -104,7 +103,7 @@ namespace Shale\Response\Factories
     /**
     * Status code 405
     */
-    public function methodNotAllowed()
+    public function methodNotAllowed($content, $headers = array())
     {
         $this->methodNotImplemented();
     }
@@ -113,7 +112,7 @@ namespace Shale\Response\Factories
     * Status code 406
     * AKA: The Earl of Lemongrab
     */
-    public function notAcceptable()
+    public function notAcceptable($content, $headers = array())
     {
         $this->methodNotImplemented();
 
@@ -167,25 +166,25 @@ namespace Shale\Response\Factories
             +++++=I8OOOOOOOOOOOOO8OI===+++++++++++II+====+II?=+++++==Z8OOOOOOOOOOOOOO8OOOOOO
             +++++=+8OOOOOOOOOOOOOO88ZI===+++++++++=?II??II?++++++++=78OOOOOOOOOOOOOOO8OOOOOO
             ++++++=Z8OOOOOOOOOOOOOOOOO888Z7+====++++++++++++++===+I8OOOOOOOOOOOOOOOOO8OOOOOO
-            ++++++=78OOOOOOOOOOOOOOOOOOOO888O$I?++++++++++++++?7ZO8OOOOOOOOOOOOOOOOO88OOOO*/        
+            ++++++=78OOOOOOOOOOOOOOOOOOOO888O$I?++++++++++++++?7ZO8OOOOOOOOOOOOOOOOO88OOOO*/
     }
 
     /**
     * Status code 500
     */
-    public function internalServerError()
+    public function internalServerError($content, $headers = array())
     {
         $this->methodNotImplemented();
     }
-                                                             
+
+    public function send($message, $status, array $headers = array())
+    {
+      return new Response($message, $status, $headers);
+    }
+
     private function methodNotImplemented()
     {
         throw new MethodNotImplementedException();
-    }
-
-    protected function send($message, $status, array $headers = array())
-    {
-      return new Response($message, $status, $headers);
     }
   }
 }
