@@ -3,6 +3,7 @@
 namespace Shale\Response\Factories
 {
   use Symfony\Component\HttpFoundation\Response;
+  use Shale\Response\Exceptions\MethodNotImplementedException;
 
   abstract class ResponseFactoryBase
   {
@@ -47,7 +48,7 @@ namespace Shale\Response\Factories
     /**
     * Status code 301
     */
-    public function movedPermantently($content, $headers = array())
+    public function movedPermanently($content, $headers = array())
     {
         $this->methodNotImplemented();
     }
