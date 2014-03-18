@@ -21,17 +21,17 @@ class ResponseFactoryTest extends PHPUnit_Framework_TestCase
     $this->assertEquals($response->getContent(), 'test');
   }
 
-  public function testResourceNotFound()
+  public function testNotFound()
   {
-    $response = $this->responseFactory->resourceNotFound('test');
+    $response = $this->responseFactory->notFound('test');
     $this->assertInstanceOf('Symfony\\Component\\HttpFoundation\\Response', $response);
     $this->assertEquals($response->getStatusCode(), 404);
     $this->assertEquals($response->getContent(), 'test');
   }
 
-  public function testError()
+  public function testInternalServerError()
   {
-    $response = $this->responseFactory->error('test');
+    $response = $this->responseFactory->internalServerError('test');
     $this->assertInstanceOf('Symfony\\Component\\HttpFoundation\\Response', $response);
     $this->assertEquals($response->getStatusCode(), 500);
   }
