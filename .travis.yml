@@ -9,4 +9,4 @@ before_script:
 script: 
   - php -v
   -  phpunit  --log-junit shippable/testresults/junit.xml tests/
-  -  phpunit --coverage-xml  shippable/codecoverage/  tests
+  -  phpunit --coverage-xml  shippable/codecoverage/  tests/
