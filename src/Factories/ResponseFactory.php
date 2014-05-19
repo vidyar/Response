@@ -7,6 +7,7 @@ class ResponseFactory extends ResponseFactoryBase
   public function ok($message, $headers = array())
   {
     return $this->send($message, 200, $headers);
+    echo strtotime("now"), "\n";
   }
 
   public function notFound($message, $headers = array())
