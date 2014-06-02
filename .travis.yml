@@ -8,5 +8,7 @@ before_script:
   -  mkdir -p shippable/testresults
 script: 
   -  php -v
-  -  phpunit  --log-junit shippable/testresults/junit.xml tests/
-  -  phpunit --coverage-xml  shippable/codecoverage/  tests/
+ # -  phpunit  --log-junit shippable/testresults/junit.xml tests/
+  #-  phpunit --coverage-xml  shippable/codecoverage/  tests/
+  - phpunit --log-junit shippable/testresults/junit.xml --bootstrap tests/bootstrap.php tests
+  - phpunit --coverage-xml shippable/codecoverage/ --bootstrap tests/bootstrap.php tests
