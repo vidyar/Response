@@ -2,7 +2,7 @@ language: php
 
 php:
   - 5.5
-  - hhvm
+ # - hhvm
 before_script:
   -  composer install
   -  mkdir -p shippable/codecoverage
@@ -14,6 +14,3 @@ script:
   - phpunit --log-junit shippable/testresults/junit.xml --bootstrap tests/bootstrap.php tests
   - phpunit --coverage-xml shippable/codecoverage/ --bootstrap tests/bootstrap.php tests
 
-matrix:
-  include:
-   - php: 5.6
