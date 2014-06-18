@@ -4,7 +4,7 @@ php:
   - 5.2
   - 5.4
   - 5.5
-  #- hhvm
+  - hhvm
 before_script:
   -  composer install
   -  mkdir -p shippable/codecoverage
