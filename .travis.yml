@@ -9,6 +9,7 @@ before_script:
   -  composer install
   -  mkdir -p shippable/codecoverage
   -  mkdir -p shippable/testresults
+
 script: 
   -  php -v
  # -  phpunit  --log-junit shippable/testresults/junit.xml tests/
