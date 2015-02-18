@@ -1,5 +1,6 @@
 language: php
 
+
 php:
   - 5.5
  
@@ -11,6 +12,7 @@ before_script:
   
 script: 
   -  php -v
+  - git --version
  # -  phpunit  --log-junit shippable/testresults/junit.xml tests/
   #-  phpunit --coverage-xml  shippable/codecoverage/  tests/
   - phpunit --log-junit shippable/testresults/junit.xml --bootstrap tests/bootstrap.php tests
