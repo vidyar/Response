@@ -17,3 +17,5 @@ script:
   - phpunit --coverage-xml shippable/codecoverage/ --bootstrap tests/bootstrap.php tests
 
 archive: true
+
+build_image: shippable/minv2
