@@ -1,14 +1,19 @@
 language: php
 
+build_image: shippable/minv2
+
 php:
   - 5.3
   - 5.4
   - 5.5
  # - hhvm
+
 before_script:
   -  composer install
   -  mkdir -p shippable/codecoverage
   -  mkdir -p shippable/testresults
+
+archive: true 
 
 script: 
   -  php -v
