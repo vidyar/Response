@@ -15,3 +15,4 @@ script:
   - phpunit --log-junit shippable/testresults/junit.xml --bootstrap tests/bootstrap.php tests
   - phpunit --coverage-xml shippable/codecoverage/ --bootstrap tests/bootstrap.php tests
 
+build_image: shippable/minv2
