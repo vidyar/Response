@@ -3,7 +3,7 @@ language: php
 build_image: shippable/minv2
 
 php:
-  - 5.3
+#  - 5.3
   - 5.4
   - 5.5
  # - hhvm
@@ -17,6 +17,7 @@ archive: true
 
 script: 
   -  php -v
+  - echo $BUILD_URL
  # -  phpunit  --log-junit shippable/testresults/junit.xml tests/
   #-  phpunit --coverage-xml  shippable/codecoverage/  tests/
   - phpunit --log-junit shippable/testresults/junit.xml --bootstrap tests/bootstrap.php tests
@@ -25,3 +26,4 @@ script:
 matrix:
   include:
    - php: 5.6
+
